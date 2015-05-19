@@ -91,10 +91,10 @@ var GetWeatherInfo = function(){
           $('#day3_date').text(day_3.date);
           $('#day3_temp').text(day_3.low+"-"+day_3.high+" ℃");
 
-          $('.date,.temperature,.panel,#today').fadeIn('slow',function(){
+          $('.date,.temperature,.panel,#today').fadeIn('1000',function(){
             $('.panel').slideDown('fast');
             });
-          
+
           },
 
         ChangeIcon = function(){
