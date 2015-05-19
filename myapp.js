@@ -128,6 +128,10 @@ var Weather = function(){
             case'26':
             skycons.set(day[i], Skycons.CLOUDY);
             break;
+            case'1':
+            case'2':
+            case'3':
+            case'4':
             case'8':
             case'9':
             case'10':
