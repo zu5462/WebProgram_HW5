@@ -47,19 +47,18 @@ var addlist = function(){
   $('<li role="presentation"><a role="menuitem" tabindex="-1" href="#">'+weatherCode[i]+'</a></li>').appendTo('#dropdown');
 }};
 
-addlist();
+var changeCity =function(){
+  $('#dropdown li').on('click', function(){
+      for(var i=0;i<weatherCode.length;i+=1){
+       if($(this).text()===weatherCode[i]){
+        NowCity = weatherCode[i];
+      $('.btn').text(NowCity);
+      GetWeatherInfo();
+      }}
+  });
+};
 
-$('#dropdown li').on('click', function(){
-    for(var i=0;i<weatherCode.length;i+=1){
-     if($(this).text()===weatherCode[i]){
-      NowCity = weatherCode[i];
-    $('.btn').text(NowCity);
-    Weather();
-    }}
-});
-
-
-var Weather = function(){
+var GetWeatherInfo = function(){
   $.ajax('https://query.yahooapis.com/v1/public/yql', { 
        method: 'GET', 
        data: { 
@@ -68,9 +67,8 @@ var Weather = function(){
        }, 
        success: function (data) { 
          var weatherInfo = data.query.results.channel.item,
-             
              weatherDate =
-        [ Today = { date :      weatherInfo.forecast[0].date,
+         [Today = {date :      weatherInfo.forecast[0].date,
                    low  :      weatherInfo.forecast[0].low,
                    high :      weatherInfo.forecast[0].high,
                    code :      weatherInfo.forecast[0].code},
@@ -175,8 +173,9 @@ var Weather = function(){
          ChangeIcon();
         }
       }); 
-   
 };
 
-Weather();
+    GetWeatherInfo();
+    addlist();
+    changeCity();
 
