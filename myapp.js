@@ -100,6 +100,7 @@ var GetWeatherInfo = function(){
           
           $('#day3_date').text(day_3.date);
           $('#day3_temp').text(day_3.low+"-"+day_3.high+" ℃");
+          
           },
 
         ChangeIcon = function(){
@@ -166,11 +167,11 @@ var GetWeatherInfo = function(){
             break;
             default:
             break;
-            }
-          }
-        };
-         Weatherchange();
-         ChangeIcon();
+                }
+              }
+            };
+      Weatherchange();
+      ChangeIcon();
         }
       }); 
 };
