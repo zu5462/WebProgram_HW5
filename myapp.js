@@ -167,7 +167,7 @@ var Weather = function(){
             skycons.set(day[i], Skycons.FOG);
             break;
             default:
-            skycons.set(day[i], Skycons.FOG);
+            break;
             }
           }
         };
