@@ -76,7 +76,9 @@ var GetWeatherInfo = function(){
                    code :      weatherInfo.forecast[3].code}],
 
         Weatherchange = function(){
-          $('.date,.temperature,.table,#today').css('display','none');
+          $('.panel').slideUp('slow');
+          $('.date,.temperature,.panel,#today').hide();
+
           $('.date').text(Today.date);
           $('.temperature').text(Today.low+"-"+Today.high);
           
@@ -88,7 +90,11 @@ var GetWeatherInfo = function(){
           
           $('#day3_date').text(day_3.date);
           $('#day3_temp').text(day_3.low+"-"+day_3.high+" ℃");
-          $('.date,.temperature,.table,#today').fadeIn('slow');
+
+          $('.date,.temperature,.panel,#today').fadeIn('slow',function(){
+            $('.panel').slideDown('fast');
+            });
+          
           },
 
         ChangeIcon = function(){
