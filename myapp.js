@@ -98,10 +98,8 @@ var GetWeatherInfo = function(){
           $('#day3_date').text(day_3.date);
           $('#day3_temp').text(day_3.low+"-"+day_3.high+" ℃");
 
-          $('.date,.temperature,.panel,#today').fadeIn('1000',function(){
-            $('.panel').slideDown('fast');
-            });
-
+          $('.date,.temperature,#today').fadeIn('1000');
+          $('.panel').slideDown('slow');
           },
 
         ChangeIcon = function(){
