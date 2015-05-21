@@ -31,7 +31,7 @@ var addlist = function(){
   $('.btn').text(NowCity);
   $('li').remove();
   for(var i=0;i<weatherCode.length;i+=1){
-  $('<li role="presentation" id="weatherCode'+i+'"><a role="menuitem" tabindex="-1" href="#">'+weatherCode[i]+'</a></li>').appendTo('#dropdown');
+  $('<li role="presentation"><a role="menuitem" tabindex="-1" href="#'+weatherCode[i]+'">'+weatherCode[i]+'</a></li>').appendTo('#dropdown');
   }
   $('#dropdown').css({'height':'70vh','overflow-y':'scroll'});
 };
