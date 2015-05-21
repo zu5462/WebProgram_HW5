@@ -65,7 +65,8 @@ var GetWeatherInfo = function(){
          [Today = {date :      weatherInfo.forecast[0].date,
                    low  :      weatherInfo.forecast[0].low,
                    high :      weatherInfo.forecast[0].high,
-                   code :      weatherInfo.forecast[0].code},
+                   code :      weatherInfo.forecast[0].code,
+                   text :      weatherInfo.forecast[0].text},
  
          day_1 = { date :      weatherInfo.forecast[1].date,
                    low  :      weatherInfo.forecast[1].low,
@@ -86,9 +87,9 @@ var GetWeatherInfo = function(){
           $('.panel').slideUp('slow');
           $('.date,.temperature,.panel,#today').hide();
 
-          $('.date').text(Today.date);
+          $('.condition').html('<span class="date">'+Today.date+'</span> :'+Today.text);
           $('.temperature').text(Today.low+"-"+Today.high);
-          
+
           $('#day1_date').text(day_1.date);
           $('#day1_temp').text(day_1.low+"-"+day_1.high+" ℃");
           
