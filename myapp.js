@@ -25,7 +25,7 @@ var skycons = new Skycons();
                       '連江縣',
                   ],
     day =["today","day1","day2","day3"],
-    NowCity,
+    NowCity,cityname,
 
     Urlchange = function(){
       cityname = location.hash.split("#");
@@ -33,11 +33,13 @@ var skycons = new Skycons();
           NowCity  = weatherCode[0];
         }else{
           NowCity  = cityname[1];
+          if(NowCity==='桃園市'){
+            NowCity='桃園區';}
         }
     };
 
 var addlist = function(){
-  $('.btn').text(NowCity);
+  $('.btn').text(cityname[1]);
   $('li').remove();
   for(var i=0;i<weatherCode.length;i+=1){
   $('<li role="presentation"><a role="menuitem" tabindex="-1" href="#'+weatherCode[i]+'">'+weatherCode[i]+'</a></li>').appendTo('#dropdown');
