@@ -25,7 +25,16 @@ var skycons = new Skycons();
                       '連江縣',
                   ],
     day =["today","day1","day2","day3"],
-    NowCity = weatherCode[0];
+    NowCity,
+
+    Urlchange = function(){
+      cityname = location.hash.split("#");
+        if(cityname[1]===undefined){
+          NowCity  = weatherCode[0];
+        }else{
+          NowCity  = cityname[1];
+        }
+    };
 
 var addlist = function(){
   $('.btn').text(NowCity);
@@ -176,7 +185,8 @@ var GetWeatherInfo = function(){
       }); 
 };
   $(document).ready(function(){ 
-    GetWeatherInfo();
+    Urlchange();
     addlist();
     changeCity();
+    GetWeatherInfo();
   });
