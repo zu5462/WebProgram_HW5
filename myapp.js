@@ -174,8 +174,8 @@ var GetWeatherInfo = function(){
         }
       }); 
 };
-
+  $(document).ready(function(){ 
     GetWeatherInfo();
     addlist();
     changeCity();
-
+  });
