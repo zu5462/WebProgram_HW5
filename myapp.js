@@ -63,36 +63,39 @@ var GetWeatherInfo = function(){
          var weatherInfo = data.query.results.channel.item,
              weatherDate =
          [Today = {date :      weatherInfo.forecast[0].date,
-                   low  :      weatherInfo.forecast[0].low,
-                   high :      weatherInfo.forecast[0].high,
+                   temp :      weatherInfo.condition.temp,
                    code :      weatherInfo.forecast[0].code,
                    text :      weatherInfo.forecast[0].text},
  
          day_1 = { date :      weatherInfo.forecast[1].date,
                    low  :      weatherInfo.forecast[1].low,
                    high :      weatherInfo.forecast[1].high,
-                   code :      weatherInfo.forecast[1].code},
+                   code :      weatherInfo.forecast[1].code,
+                   text :      weatherInfo.forecast[1].text},
+
 
          day_2 = { date :      weatherInfo.forecast[2].date,
                    low  :      weatherInfo.forecast[2].low,
                    high :      weatherInfo.forecast[2].high,
-                   code :      weatherInfo.forecast[2].code},
+                   code :      weatherInfo.forecast[2].code,
+                   text :      weatherInfo.forecast[2].text},
 
          day_3 = { date :      weatherInfo.forecast[3].date,
                    low  :      weatherInfo.forecast[3].low,
                    high :      weatherInfo.forecast[3].high,
-                   code :      weatherInfo.forecast[3].code}],
+                   code :      weatherInfo.forecast[3].code,
+                   text :      weatherInfo.forecast[3].text}],
 
         Weatherchange = function(){
           $('.panel').slideUp('slow');
           $('.date,.temperature,.panel,#today').hide();
 
           $('.condition').html('<span class="date">'+Today.date+'</span> :'+Today.text);
-          $('.temperature').text(Today.low+"-"+Today.high);
+          $('.temperature').text(Today.temp);
 
           $('#day1_date').text(day_1.date);
           $('#day1_temp').text(day_1.low+"-"+day_1.high+" ℃");
-          
+
           $('#day2_date').text(day_2.date);
           $('#day2_temp').text(day_2.low+"-"+day_2.high+" ℃");
           
