@@ -30,6 +30,7 @@ var skycons = new Skycons();
     Urlchange = function(){
       cityname = location.hash.split("#");
         if(cityname[1]===undefined){
+          cityname[1] = weatherCode[0];
           NowCity  = weatherCode[0];
         }else{
           NowCity  = cityname[1];
