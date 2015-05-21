@@ -70,21 +70,18 @@ var GetWeatherInfo = function(){
          day_1 = { date :      weatherInfo.forecast[1].date,
                    low  :      weatherInfo.forecast[1].low,
                    high :      weatherInfo.forecast[1].high,
-                   code :      weatherInfo.forecast[1].code,
-                   text :      weatherInfo.forecast[1].text},
+                   code :      weatherInfo.forecast[1].code},
 
 
          day_2 = { date :      weatherInfo.forecast[2].date,
                    low  :      weatherInfo.forecast[2].low,
                    high :      weatherInfo.forecast[2].high,
-                   code :      weatherInfo.forecast[2].code,
-                   text :      weatherInfo.forecast[2].text},
+                   code :      weatherInfo.forecast[2].code},
 
          day_3 = { date :      weatherInfo.forecast[3].date,
                    low  :      weatherInfo.forecast[3].low,
                    high :      weatherInfo.forecast[3].high,
-                   code :      weatherInfo.forecast[3].code,
-                   text :      weatherInfo.forecast[3].text}],
+                   code :      weatherInfo.forecast[3].code}],
 
         Weatherchange = function(){
           $('.panel').slideUp('slow');
